@@ -16,18 +16,18 @@
 ifeq (pa_jalebi,$(TARGET_PRODUCT))
 endif
 
+# Include ParanoidAndroid common configuration
 $(call inherit-product, vendor/pa/main.mk)
 
-# Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
-
-# Include ParanoidAndroid common configuration
 TARGET_BOOT_ANIMATION_RES := 720
 
-$(call inherit-product, device/yu/jalebi/full_jalebi.mk)
+$(call inherit-product, device/yu/jalebi/jalebi.mk)
 
 # Must define platform variant before including any common things
 TARGET_BOARD_PLATFORM_VARIANT := msm8916
+
+# Assert
+TARGET_OTA_ASSERT_DEVICE := Kraft-T,a6000,K30-T,A6000,Kraft-W,Kraft-C,k30t,msm8916,Kraft-A6000,wt86518,jalebi
 
 PRODUCT_NAME := pa_jalebi
 BOARD_VENDOR := yu
