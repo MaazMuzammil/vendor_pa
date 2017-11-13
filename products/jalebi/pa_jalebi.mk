@@ -14,6 +14,7 @@
 
 # Check for target product
 ifeq (pa_jalebi,$(TARGET_PRODUCT))
+endif
 
 $(call inherit-product, vendor/pa/main.mk)
 
@@ -30,12 +31,7 @@ TARGET_BOARD_PLATFORM_VARIANT := msm8916
 
 PRODUCT_NAME := pa_jalebi
 BOARD_VENDOR := yu
-PRODUCT_DEVICE := jalebi
 
 PRODUCT_GMS_CLIENTID_BASE := android-micromax
 
-TARGET_VENDOR_PRODUCT_NAME := YUNIQUE
-TARGET_VENDOR_DEVICE_NAME := YUNIQUE
-PRODUCT_BUILD_PROP_OVERRIDES += TARGET_DEVICE=YUNIQUE PRODUCT_NAME=YUNIQUE
-
-endif
+include device/qcom/common/common.mk
